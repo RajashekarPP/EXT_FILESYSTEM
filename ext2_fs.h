@@ -1,4 +1,4 @@
-
+// MACROS Used are all defined in this file only
 #define EXT2_VALID_FS 1 	//Unmounted cleanly
 #define EXT2_ERROR_FS 2 	//Errors detected
 
