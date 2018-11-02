@@ -1,4 +1,4 @@
-
+//defines the new datatypes names
 typedef signed char __s8;
 typedef unsigned char __u8;
 typedef signed short int __s16;
