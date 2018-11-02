@@ -207,6 +207,8 @@ __u32 i_dir_acl; 	/*Directory ACL */
 __u32 i_faddr; 		/*Fragment address */
 union...osd2, 		/*big union to hold os-specific stuff --pls*/
 
+};
+
 struct ext2_dir_entry_2 {
 __u32 inode; 		/* Inode number */
 __u16 rec_len; 		/* Directory entry length */
@@ -221,5 +223,3 @@ char  name[EXT2_NAME_LEN];	 /* File name */
 
 
 
-
-};
