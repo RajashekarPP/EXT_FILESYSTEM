@@ -1,3 +1,4 @@
+
 #ifndef __EXT2_FS_H__
 #define __EXT_FS_H__
 
@@ -207,7 +208,7 @@ struct ext2_dir_entry_2 {
 					   1 is regular file, 
 					   2 is directory, 
 					   5 is named pipe--pls*/
-	char  name[EXT2_NAME_LEN];	/* File name */
+	char  name[255];	/* File name */
 };
 
 #endif

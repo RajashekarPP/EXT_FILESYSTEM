@@ -29,7 +29,6 @@ int main(int argc , char **argv)
 
 	root_inode = EXT2_ROOT_INO; // root inode no is 2
 
-
 	if(argc > ARG_CMD)
 	{
 		if(!strcpm(argv[ARG_CMD] , "ls"))
