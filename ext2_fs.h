@@ -96,26 +96,6 @@
 #define EXT2_FT_SOCK 6 //Socket File
 #define EXT2_FT_SYMLINK 7 //Symbolic Link
 
-/*
-#define EXT2_SECRM_FL 0x00000001 //secure deletion
-#define EXT2_UNRM_FL 0x00000002 //record for undelete
-#define EXT2_COMPR_FL 0x00000004 //compressed file
-#define EXT2_SYNC_FL 0x00000008 //synchronous updates
-#define #define EXT2_IMMUTABLE_FL 0x00000010 //immutable file
-#define EXT2_APPEND_FL 0x00000020 //append only
-#define EXT2_NODUMP_FL 0x00000040 //do not dump/delete file
-#define EXT2_NOATIME_FL 0x00000080 //do not update .i_atime
-#define EXT2_DIRTY_FL 0x00000100 //dirty (file is in use?)
-#define EXT2_COMPRBLK_FL 0x00000200 //compressed blocks
-#define EXT2_NOCOMPR_FL 0x00000400 //access raw compressed data
-#define EXT2_ECOMPR_FL 0x00000800 //compression error
-#define EXT2_BTREE_FL 0x00010000 //b-tree format directory
-#define EXT2_INDEX_FL 0x00010000 //Hash indexed directory
-#define EXT2_IMAGIC_FL 0x00020000 //?
-#define EXT3_JOURNAL_DATA_FL 0x00040000 //journal file data
-#define EXT2_RESERVED_FL 0x80000000 //reserved for ext2 implementation
- */
-
 /***********************/
 
 //EXT2 SUPERBLOCK STRUCTURE
