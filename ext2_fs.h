@@ -1,4 +1,4 @@
-// MACROS Used are all defined in this file only
+
 #define EXT2_VALID_FS 1 	//Unmounted cleanly
 #define EXT2_ERROR_FS 2 	//Errors detected
 
@@ -115,8 +115,9 @@
 #define EXT2_RESERVED_FL 0x80000000 //reserved for ext2 implementation
 */
 
+/***********************/
 
-
+//EXT2 SUPERBLOCK STRUCTURE
 struct ext2_super_block {
 __u32 s_inodes_count; 		/* Inodes count */
 __u32 s_blocks_count; 		 /* Blocks count */
@@ -156,6 +157,7 @@ __u16 s_padding1; 		/* Padding to the end of the block */
 __u32 s_reserved[204];
 };
 
+//EXT2 superblock operations
 static struct super_operations ext2_sops = {
 read_inode: ext2_read_inode,
 write_inode: ext2_write_inode,
@@ -167,6 +169,7 @@ statfs: ext2_statfs,
 remount_fs: ext2_remount,
 };
 
+// structer for group description table
 struct ext2_group_desc
 {
 __u32 bg_block_bitmap; 		/* [number of] Blocks bitmap block */
@@ -181,6 +184,7 @@ __u16 bg_pad; 			/* alignment to word boundary --pls*/
 __u32 bg_reserved[3];  		/* nulls to pad out 24 bytes --pls*/
 };
 
+// Inode structure for ext2 file system
 struct ext2_inode {
 __u16 i_mode;		 /* File mode */
 __u16 i_uid; 		/* Low 16 bits of Owner Uid */
@@ -199,27 +203,32 @@ __u16 i_links_count; /* Links count */
 * This may change when/if fragmentation is implemented --pls*/
 __u32 i_blocks; 	/* Blocks count */
 __u32 i_flags; 		/* File flags */
-union...osd1; 		/* big union to hold os-specific stuff --pls*/
+
+//union...osd1; 		/* big union to hold os-specific stuff --pls*/
+
+//linux os sysytems
 __u32 i_block[EXT2_N_BLOCKS]; /* Pointers to [data] blocks */
 __u32 i_generation; 	/*File version (for NFS) */
 __u32 i_file_acl; 	/*File ACL */
 __u32 i_dir_acl; 	/*Directory ACL */
 __u32 i_faddr; 		/*Fragment address */
-union...osd2, 		/*big union to hold os-specific stuff --pls*/
 
-};
+//union...osd2, 		/*big union to hold os-specific stuff --pls*/
 
+// structure of the directory
 struct ext2_dir_entry_2 {
-__u32 inode; 		/* Inode number */
-__u16 rec_len; 		/* Directory entry length */
-__u8 name_len; 		/* [actual] Name length */
-__u8 file_type; 	/* for example. 
-			1 is regular file, 
-			2 is directory, 
-			5 is named pipe--pls*/
-char  name[EXT2_NAME_LEN];	 /* File name */
+__u32 inode; 			/* Inode number */
+__u16 rec_len; 			/* Directory entry length */
+__u8 name_len; 			/* [actual] Name length */
+__u8 file_type; 		/* for example. 
+				1 is regular file, 
+				2 is directory, 
+				5 is named pipe--pls*/
+char  name[EXT2_NAME_LEN];	/* File name */
 };
 
 
 
 
+
+};
