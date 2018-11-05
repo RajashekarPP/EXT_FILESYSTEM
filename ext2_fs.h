@@ -1,3 +1,5 @@
+#ifndef __EXT2_FS_H__
+#define __EXT_FS_H__
 
 #define EXT2_VALID_FS 1 	//Unmounted cleanly
 #define EXT2_ERROR_FS 2 	//Errors detected
@@ -12,7 +14,6 @@
 #define EXT2_OS_MASIX 2		//MASIX
 #define EXT2_OS_FREEBSD 3 	//FreeBSD
 #define EXT2_OS_LITES 4 	//Lites
-
 #define EXT2_GOOD_OLD_REV 0   //Revision 0
 #define EXT2_DYNAMIC_REV 1    // Revision 1 with variable inode sizes,extended attributes, etc.
 
@@ -229,3 +230,4 @@ struct ext2_dir_entry_2 {
 	char  name[EXT2_NAME_LEN];	/* File name */
 };
 
+#endif

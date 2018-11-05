@@ -1,3 +1,6 @@
+#ifndef __EXT_SB_INFO__
+#define __EXT_SB_INFO__
+
 struct ext2_sb_info {
 unsigned long s_frag_size; /* Size of a fragment in bytes */
 unsigned long s_frags_per_block;/* Number of fragments per block */
@@ -28,3 +31,5 @@ int s_desc_per_block_bits;
 int s_inode_size;
 int s_first_ino;
 };
+
+#endif
