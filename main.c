@@ -1,7 +1,8 @@
 /*
 	Before runnig the main program some of the command line executions are
-	dd  if=/dev/zero op=ext2fs.img bs=1024
-	mke2fs ext2fs.img -b 1024
+	dd  if=/dev/zero op=ext2fs.img bs=1024 count=10240 //for 10MB
+	mkfs.ext2 ext2fs.img
+	sudo mount ext2fs.img ./
 */
 
 #include"headers.h"
@@ -48,7 +49,7 @@ int main(int argc , char **argv)
 		printf("Block Group Descriptor Table Building failed\n");               
 		return -1;                                                              
 	}                                                                            
-/*
+
 	// read inode table                                                          
 	if(inode_table_info(fd) == -1)                                               
 	{                                                                            
@@ -62,7 +63,7 @@ int main(int argc , char **argv)
 		printf("Directory Entry Table failed\n");                               
 		return -1;                                                              
 	}   
-*/
+
 
 	if(argc > ARG_CMD)
 	{

@@ -17,7 +17,7 @@
 int superblock_info(int);
 int inode_table_info(int);
 int block_group_descriptor_t_info(int);
-int readdir(int);
+int read_dir(int);
 
 int ls(int , int); //filedescriptor , root_inode no
 int cp(int , char * ,char *, int); //filedescriptor ,src filename , des filename ,root_inode no

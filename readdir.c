@@ -1,6 +1,6 @@
 #include"headers.h"
 
-int readdir(int fd)
+int read_dir(int fd)
 {
 
 

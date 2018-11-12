@@ -17,9 +17,10 @@ int superblock_info(int fd)
 		return -1;
 	}	
 
-	printf("s_inodes_count = %lu \n",sb->s_inodes_count);
-	printf("s_inodes_per_group = %lu \n",sb->s_inodes_per_group);
-	printf("s_free_inodes_count = %lu \n",sb->s_free_inodes_count);
+	printf("s_inodes_count = %lu\n",sb->s_inodes_count);
+	printf("s_blocks_count = %lu\n",sb->s_blocks_count);
+	printf("s_inodes_per_group = %lu\n",sb->s_inodes_per_group);
+	printf("s_free_inodes_count = %lu\n",sb->s_free_inodes_count);
 return 0;
 }
 
