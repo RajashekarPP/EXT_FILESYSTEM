@@ -125,7 +125,7 @@ struct ext2_super_block {
 	__s16 s_max_mnt_count; 		/* Maximal mount count [before check]*/
 	__u16 s_magic; 			/* Magic signature */
 	__u16 s_state; 			/* File system state */
-	__u16  s_errors; 		/* Behaviour when detecting errors */
+	__u16 s_errors; 		/* Behaviour when detecting errors */
 	__u16 s_minor_rev_level;	/* minor revision level */
 	__u32 s_lastcheck; 		/* time of last check */
 	__u32 s_checkinterval; 		/* max. time between checks */
@@ -139,6 +139,7 @@ struct ext2_super_block {
 	__u32 s_reserved[204];
 };
 
+/*
 //EXT2 superblock operations
 static struct super_operations ext2_sops = {
 read_inode: ext2_read_inode,
@@ -150,6 +151,7 @@ read_inode: ext2_read_inode,
 	    statfs: ext2_statfs,
 	    remount_fs: ext2_remount,
 };
+*/
 
 // structer for group description table
 struct ext2_group_desc
@@ -189,7 +191,7 @@ struct ext2_inode {
 	//union...osd1; 		/* big union to hold os-specific stuff --pls*/
 
 	//linux os sysytems
-	__u32 i_block[EXT2_N_BLOCKS]; /* Pointers to [data] blocks */
+	__u32 i_block[1024]; /* Pointers to [data] blocks */
 	__u32 i_generation; 	/*File version (for NFS) */
 	__u32 i_file_acl; 	/*File ACL */
 	__u32 i_dir_acl; 	/*Directory ACL */

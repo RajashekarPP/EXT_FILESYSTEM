@@ -1,9 +1,9 @@
 #include"headers.h"
 
-int readdir()
+int readdir(int fd)
 {
 
 
 
-	return ;
+	return 0;
 }

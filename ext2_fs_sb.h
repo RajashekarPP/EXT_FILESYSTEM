@@ -1,35 +1,39 @@
 #ifndef __EXT_SB_INFO__
 #define __EXT_SB_INFO__
 
+//structure used to store the super block information 
+
 struct ext2_sb_info {
-unsigned long s_frag_size; /* Size of a fragment in bytes */
-unsigned long s_frags_per_block;/* Number of fragments per block */
-unsigned long s_inodes_per_block;/* Number of inodes per block */
-unsigned long s_frags_per_group;/* Number of fragments in a group */
-unsigned long s_blocks_per_group;/* Number of blocks in a group */
-unsigned long s_inodes_per_group;/* Number of inodes in a group */
-unsigned long s_itb_per_group; /* Number of inode table blocks per  group */
-unsigned long s_gdb_count; /* Number of group descriptor blocks */
-unsigned long s_desc_per_block; /* Number of group descriptors per block */
-unsigned long s_groups_count; /* Number of groups in the fs */
+__u32 s_frag_size; /* Size of a fragment in bytes */
+__u32 s_frags_per_block;/* Number of fragments per block */
+__u32 s_inodes_per_block;/* Number of inodes per block */
+__u32 s_frags_per_group;/* Number of fragments in a group */
+__u32 s_blocks_per_group;/* Number of blocks in a group */
+__u32 s_inodes_per_group;/* Number of inodes in a group */
+__u32 s_itb_per_group; /* Number of inode table blocks per  group */
+__u32 s_gdb_count; /* Number of group descriptor blocks */
+__u32 s_desc_per_block; /* Number of group descriptors per block */
+__u32 s_groups_count; /* Number of groups in the fs */
 struct buffer_head * s_sbh; /* Buffer containing the super block */
 struct ext2_super_block * s_es; /* Pointer to the super block in the buffer */
 struct buffer_head ** s_group_desc;
-unsigned short s_loaded_inode_bitmaps;
-unsigned short s_loaded_block_bitmaps;
-unsigned long s_inode_bitmap_number[EXT2_MAX_GROUP_LOADED];
+__u16 s_loaded_inode_bitmaps;
+__u16 s_loaded_block_bitmaps;
+/*
+__u32 s_inode_bitmap_number[EXT2_MAX_GROUP_LOADED];
 struct buffer_head * s_inode_bitmap[EXT2_MAX_GROUP_LOADED];
-unsigned long s_block_bitmap_number[EXT2_MAX_GROUP_LOADED];
+__u32 s_block_bitmap_number[EXT2_MAX_GROUP_LOADED];
 struct buffer_head * s_block_bitmap[EXT2_MAX_GROUP_LOADED];
-unsigned long s_mount_opt;
+*/
+__u32 s_mount_opt;
 uid_t s_resuid;
 gid_t s_resgid;
-unsigned short s_mount_state;
-unsigned short s_pad;
-int s_addr_per_block_bits;
-int s_desc_per_block_bits;
-int s_inode_size;
-int s_first_ino;
+__u16 s_mount_state;
+__u16 s_pad;
+__s32 s_addr_per_block_bits;
+__s32 s_desc_per_block_bits;
+__s32 s_inode_size;
+__s32 s_first_ino;
 };
 
 #endif

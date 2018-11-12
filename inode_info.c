@@ -1,8 +1,8 @@
 #include"headers.h"
 
-int inode_info()
+int inode_table_info(int fd)
 {
 
 
-	return ;
+	return 0;
 }
