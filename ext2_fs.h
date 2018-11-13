@@ -5,6 +5,8 @@
 #define EXT2_VALID_FS 1 	//Unmounted cleanly
 #define EXT2_ERROR_FS 2 	//Errors detected
 
+#define EXT2_SUPER_MAGIC	0xEF53 // magic no that determines the type of file sytem is ext2
+
 #define EXT2_XATTR_MAGIC 0xEA020000 //32 bit magic no of identification
 #define EXT2_ERRORS_CONTINUE 1	 //continue as if nothing happened
 #define EXT2_ERRORS_RO 2  	//remount read-only
@@ -200,6 +202,16 @@ struct ext2_inode {
 	//union...osd2, 		/*big union to hold os-specific stuff --pls*/
 
 };
+
+
+struct dirent {
+long d_ino;
+__kernel_off_t d_off; 
+unsigned short d_reclen; // --length of whole struct + k,
+			//(0 <= k <= 3) --pls
+char d_name[256]; /* We must not include limits.h! */
+};
+
 
 // structure of the directory
 struct ext2_dir_entry_2 {

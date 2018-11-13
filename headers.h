@@ -12,12 +12,12 @@
 
 #include"types.h"
 #include"ext2_fs.h"
-#include"ext2_fs_sb.h"
+//#include"ext2_fs_sb.h"
 
 int superblock_info(int);
 int inode_table_info(int);
 int block_group_descriptor_t_info(int);
-int read_dir(int);
+int read_dir(int,int);
 
 int ls(int , int); //filedescriptor , root_inode no
 int cp(int , char * ,char *, int); //filedescriptor ,src filename , des filename ,root_inode no

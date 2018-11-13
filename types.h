@@ -8,6 +8,7 @@ typedef unsigned long int __u32;
 typedef signed long long int __s64;
 typedef unsigned long long int __u64;
 
+typedef long		__kernel_off_t;
 /*
 typedef float f32;
 typedef double d64;

@@ -26,10 +26,14 @@ int main(int argc , char **argv)
 	}	
 
 	fd = open(argv[ARG_FILE_SYSTEM],O_RDONLY);
+	perror("fd ");
+
+	printf("fd = %d\n",fd);
+
 	if(fd == -1)
 	{
 		printf("unable to open the file\n");
-		perror("open : ");
+		perror("open ");
 		return -1;
 	}
 
@@ -58,7 +62,7 @@ int main(int argc , char **argv)
 	}                                                                            
 
 	// read directory entry table                                                
-	if(read_dir(fd, inode_num) == -1)                                            
+	if(read_dir(fd, root_inode) == -1)                                            
 	{                                                                            
 		printf("Directory Entry Table failed\n");                               
 		return -1;                                                              
