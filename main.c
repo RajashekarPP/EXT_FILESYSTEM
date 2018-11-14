@@ -28,7 +28,9 @@ int main(int argc , char **argv)
 	fd = open(argv[ARG_FILE_SYSTEM],O_RDONLY);
 	perror("fd ");
 
-	printf("fd = %d\n",fd);
+//	printf("fd = %d\n",fd);
+
+//printf(" ** size of spr block is %lu \n",sizeof(struct ext2_super_block));
 
 	if(fd == -1)
 	{
@@ -61,6 +63,7 @@ int main(int argc , char **argv)
 		return -1;                                                              
 	}                                                                            
 
+
 	// read directory entry table                                                
 	if(read_dir(fd, root_inode) == -1)                                            
 	{                                                                            
@@ -73,6 +76,10 @@ int main(int argc , char **argv)
 	{
 		if(!strcmp(argv[ARG_CMD] , "ls"))
 		{
+			if(argv[ARG_CMD+1])
+			{
+				puts("find the final inode of given path");
+			}
 			//call ls function	
 			if(ls(fd , root_inode))
 				puts("listing of given directory is sucessful");	
@@ -87,7 +94,7 @@ int main(int argc , char **argv)
 				return -1;
 			}
 			//call cp command
-			if(cp(fd,argv[ARG_SRC_FILE] ,argv[ARG_DES_FILE],root_inode))
+			cp(fd,argv[ARG_SRC_FILE] ,argv[ARG_DES_FILE],root_inode);
 				puts("copying has been done sucessfully");				
 		}		
 
@@ -108,6 +115,7 @@ int main(int argc , char **argv)
 		}
 	}
 
+//#endif
 	close(fd);
 
 	return 0;

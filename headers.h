@@ -1,26 +1,31 @@
-#ifndef __HEADERS_H__
-#define __HEADERS_H__
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <math.h>
-#include<sys/stat.h>
-#include<sys/types.h>
-#include<fcntl.h>
-#include<unistd.h>
+#include <time.h>
+#include <pwd.h>
+#include <grp.h>
 
-#include"types.h"
-#include"ext2_fs.h"
-//#include"ext2_fs_sb.h"
+#include"include/type.h"
+#include"include/types.h"
+#include "include/superblock.h"
+#include "include/bgd_table.h"
+#include "include/inode.h"
+#include "include/directory.h"
 
-int superblock_info(int);
-int inode_table_info(int);
-int block_group_descriptor_t_info(int);
-int read_dir(int,int);
+ext2_superblock *sb;
+ext2_blkgrpdesc_table *g_desc;
+ext2_inode_table *inode_t;
+ext2_dir_table *direntry_table;
 
-int ls(int , int); //filedescriptor , root_inode no
-int cp(int , char * ,char *, int); //filedescriptor ,src filename , des filename ,root_inode no
-int cd(int , char *,int); 	//filedescriptor ,directory path , root_inode no
-
-#endif
+__le32 superblock_info(__le32);
+__le32 block_group_descriptor_t_info(__le32);
+__le32 inode_table_info(__le32);
+__le32 read_dir(__le32, __le32);
+int ls(int, int);
+//void cp(int , char *, char* ,int);
+//int cd(int, char *,char *, int);
