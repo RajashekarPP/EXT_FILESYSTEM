@@ -13,13 +13,14 @@ int inode_table_info(int fd)
 		return -1;
 	}
 	
+// bg_inode_table this is the block no of the first inode table
 	if( lseek(fd , (g_desc->bg_inode_table )*(block_size),SEEK_SET) != (g_desc->bg_inode_table )*block_size )
 	{
 		perror("lseek ");
 		return -1;
 	}
 
-	if(read(fd ,inode_t,(sizeof(ext2_inode_table) * (sb->s_inodes_count))) != (sizeof(ext2_inode_table) * (sb->s_inodes_count)) )
+	if(read(fd ,inode_t , (sizeof(ext2_inode_table) * (sb->s_inodes_count))) != (sizeof(ext2_inode_table) * (sb->s_inodes_count)) )
 	{ 
 		perror("read ");
 		return -1;

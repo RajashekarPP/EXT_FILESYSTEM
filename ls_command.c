@@ -14,6 +14,7 @@ int ls(int fd , int root_inode)
 			puts("");
 		}	
 		lseek(fd, (direntry_table->rec_len - sizeof(ext2_dir_table)), SEEK_CUR);
+//		lseek(fd, (direntry_table->rec_len), SEEK_CUR);
 
 		// read the next file information into directory entry table
 		if(read(fd, direntry_table, sizeof(ext2_dir_table)) != sizeof(ext2_dir_table))

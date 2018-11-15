@@ -22,5 +22,11 @@ int read_dir(int fd , int root_inode)
 		return -1;
 	}
 
+printf("In direntry table reading \n");
+printf("name 	= %-20s\n",direntry_table->name);
+printf("rec_len = %u\n",direntry_table->rec_len);
+printf("name_le	= %u\n",direntry_table->name_len);
+printf("inode 	= %u \n",direntry_table->inode);
+
 	return 0;
 }
